@@ -1,0 +1,109 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.search {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  overflow: hidden;
+  box-shadow: 0px 30px 60px rgba(141, 139, 139, 0.2);
+}
+
+.search.active {
+  width: 600px;
+  padding: 0 20px;
+}
+
+.input {
+  flex-grow: 1;
+  display: none;
+}
+
+.combobox {
+  width:20%;
+  display: none;
+}
+
+.search.active .input,
+.search.active .combobox {
+  display: flex;
+  outline-color: transparent;
+  border: none;
+}
+
+
+/* .search {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  overflow: hidden;
+  box-shadow: 0px 30px 60px rgba(141, 139, 139, 0.2);
+}
+
+.search.active {
+  width: 835px;
+}
+.search .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.search .icon::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #2573ef;
+  border-radius: 50%;
+  transform: translate(-4px, -4px);
+}
+
+.search .icon::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background-color: #2573ef;
+  transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search .input {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seacr .input input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: transparent;
+  font-size: 18px;
+  padding: 10px 0;
+} */
