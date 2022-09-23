@@ -14,6 +14,7 @@
   border-radius: 60px;
   transition: 0.5s;
   overflow: hidden;
+  margin: 30px 0;
   box-shadow: 0px 30px 60px rgba(141, 139, 139, 0.2);
 }
 

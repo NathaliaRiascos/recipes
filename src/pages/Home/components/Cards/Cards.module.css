@@ -1,0 +1,13 @@
+.cards {
+  display: grid; 
+}
+
+@media screen and (min-width: 1200px){
+  .cards {
+    max-width: 850px;
+    grid-template-rows: repeat(auto-fit, 200px);
+    grid-auto-flow: column;
+    max-height: 400px;
+    overflow: hidden;
+  }
+}

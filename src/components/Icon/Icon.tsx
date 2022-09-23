@@ -16,7 +16,7 @@ function Icon({iconName, onClick}: Props) {
       className={styles.icon}
       onClick={onClick}
     >
-      <FontAwesomeIcon icon={['fas', iconName]} size='xl'/>
+      <FontAwesomeIcon icon={['fas', iconName]} size='lg'/>
     </div>
   )
 }
