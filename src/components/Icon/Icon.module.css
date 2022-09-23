@@ -1,7 +1,5 @@
 
 .icon {
-  width: 48px;
-  height: 48px;
   display: flex;
   flex-shrink: 0;
   justify-content: center;

@@ -1,41 +1,44 @@
+import { useState } from 'react'
 import styles from './Cards.module.css'
 import { Card } from '../Card/'
+import { Modal } from '@/components' 
+import { Recipe } from '@/models'
+
+import { useAppSelector } from '@/redux/hooks'
+
 
 function Cards() {
+  const { recipes } = useAppSelector(state => state.recipes)
+  const [recipe, getRecipe] = useState<null | Recipe>(null)
+  const [open, toggleOpen] = useState<boolean>(false)
 
-  const foods = [
-    {
-      img: 'food_1.png'
-    },
-    {
-      img: 'food_2.png'
-    },
-    {
-      img: 'food_3.png'
-    },
-    {
-      img: 'food_4.png'
-    },
-    {
-      img: 'food_1.png'
-    },
-    {
-      img: 'food_2.png'
-    },
-    {
-      img: 'food_3.png'
-    },
-    {
-      img: 'food_4.png'
-    }
-  ]
-
+  const handleClickImg = (recipe: Recipe) => {
+    toggleOpen(open => !open)
+    getRecipe(recipe)
+  }
   return (
-    <div className={styles.cards}>
-      { 
-        foods.map((ele, index) => <Card key={index} img={ele.img}/>)  
+    <>
+      <div className={styles.cards}>
+        { 
+          recipes?.map((recipe: Recipe) => 
+            <Card 
+              key={recipe.id}
+              recipe={recipe}
+              getRecipe={handleClickImg}
+            />
+          )  
+        }
+      </div>
+      {
+        open && 
+        <Modal 
+          title={recipe?.title}
+          toggleOpen={toggleOpen}
+        >
+          <img src={recipe?.image} />
+        </Modal>
       }
-    </div>
+    </>
   )
 }
 

@@ -6,7 +6,7 @@ import styles from './Icon.module.css'
 
 interface Props {
   iconName: IconName,
-  onClick:  (e: MouseEvent<HTMLDivElement>) => void
+  onClick?:  (e: MouseEvent<HTMLDivElement>) => void
 }
 
 function Icon({iconName, onClick}: Props) {

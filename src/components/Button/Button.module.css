@@ -6,6 +6,7 @@
   cursor: pointer;
   background-color: transparent;
   transition: 0.2s;
+  box-shadow: 0px 30px 60px rgba(141, 139, 139, 0.2);
 }
 
 .button:hover {
