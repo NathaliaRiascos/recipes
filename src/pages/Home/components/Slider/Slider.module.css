@@ -32,5 +32,10 @@
   .btn__arrow  {
     display: block;
   }
+
+  .slide {
+    width: 800px;
+    height: 400px;
+  }
 }
 

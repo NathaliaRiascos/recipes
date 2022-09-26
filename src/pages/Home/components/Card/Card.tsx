@@ -14,7 +14,7 @@ function Card({ getRecipe, recipe }: Props) {
         recipe.image ?
           <div className={styles.card}>
             <div className={styles.container__img}>
-              <img src={recipe.image} alt="" onClick={() => getRecipe && getRecipe(recipe)} />
+              <img loading='lazy'src={recipe.image} alt="" onClick={() => getRecipe && getRecipe(recipe)} />
             </div>
             <div className={styles.content}>
               <h2>{recipe.title}</h2>
