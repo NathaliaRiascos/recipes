@@ -23,7 +23,6 @@ function Search(): JSX.Element {
   }
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value, typeof e.target.value)
     dispatch(getRecipes(e.target.value))
   }
 

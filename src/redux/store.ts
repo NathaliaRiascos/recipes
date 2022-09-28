@@ -1,27 +1,38 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore, combineReducers, AnyAction } from '@reduxjs/toolkit'
 import storage from 'redux-persist/lib/storage'
-import { persistReducer } from 'redux-persist'
+import { persistReducer, persistStore } from 'redux-persist'
 import thunk from 'redux-thunk'
 
 import { recipesSlice } from './features'
 const persistConfig = {
   key: 'root',
   version: 1,
-  storage
+  storage,
 }
 
-const reducers = combineReducers({
-  recipes: recipesSlice.reducer
+const rootReducer = combineReducers({
+  recipes: recipesSlice.reducer,
 })
 
-const persistedReducer = persistReducer(persistConfig, reducers)
-const store= configureStore({
+export type RootReducer = ReturnType<typeof rootReducer>
+
+const persistedReducer = persistReducer<RootReducer, AnyAction>(
+  persistConfig,
+  rootReducer
+)
+
+const store = configureStore({
   reducer: persistedReducer,
-  middleware: [thunk]
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(thunk),
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export const persistor = persistStore(store)
 
 export type AppDispatch = typeof store.dispatch
+
+export type RootState = ReturnType<typeof store.getState>
 
 export default store
