@@ -1,10 +1,15 @@
-
-export interface Ingredient {
-  name: string
-  measure: string
+export interface Category {
+  idCategory: string
+  strCategory: string
 }
+
 export interface Recipe {
-  id: string
-  title: string,
-  image: string
+  idMeal: string
+  strMeal: string
+  strMealThumb: string
+  strInstructions?: string
+  strCategory?: string
+  strYoutube?: string
+  ingredients?: string[]
+  measures?: string[]
 }
