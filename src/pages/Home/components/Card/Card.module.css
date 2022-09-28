@@ -37,7 +37,13 @@
   align-items: center;
 }
 
-
+.content h2 {
+  display: -webkit-box;
+  padding-bottom: 20px;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
 
 @media screen and (min-width: 450px) {
   .card{

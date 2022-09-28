@@ -22,7 +22,7 @@ function Cards() {
         { 
           recipes?.map((recipe: Recipe) => 
             <Card 
-              key={recipe.id}
+              key={recipe.idMeal}
               recipe={recipe}
               getRecipe={handleClickImg}
             />
@@ -32,10 +32,10 @@ function Cards() {
       {
         open && 
         <Modal 
-          title={recipe?.title}
+          title={recipe?.strMeal}
           toggleOpen={toggleOpen}
         >
-          <img src={recipe?.image} />
+          <img loading='eager' src={recipe?.strMealThumb} alt={`image of ${recipe?.strMeal}`} />
         </Modal>
       }
     </>

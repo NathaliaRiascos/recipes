@@ -21,13 +21,17 @@
 }
 
 .search.active {
-  width: 400px;
+  width: 450px;
   padding: 0 20px;
+}
+
+
+.form {
+  display: none;
 }
 
 .input {
   flex-grow: 1;
-  display: none;
 }
 
 .container__icon {
@@ -38,14 +42,25 @@
   width: 48px;
   height: 48px;
 }
-.combobox {
+/* .combobox {
   width:20%;
-  display: none;
-}
+} */
 
 .search.active .input,
 .search.active .combobox {
   display: flex;
   outline-color: transparent;
   border: none;
+}
+
+.search.active .combobox {
+  width: auto;
+  max-width: 35%;
+  border-left: 1px solid var(--color-text);
+  padding: 0 5px;
+  color: var(--color-text);
+}
+.search.active .form {
+  display: flex;
+  flex-grow: 1;
 }
