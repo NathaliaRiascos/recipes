@@ -12,11 +12,11 @@ function Recipe() {
 
   useEffect(() => {
     dispatch(recipeById(recipeId))
-  }, [])
+  }, [recipeId])
 
   const getIdVideo = () => {
-    const index = recipe.strYoutube.indexOf('=') + 1
-    return recipe.strYoutube.slice(index)
+    const index = recipe?.strYoutube?.indexOf('=')  && recipe?.strYoutube?.indexOf('=') + 1
+    return recipe?.strYoutube?.slice(index)
   }
 
 

@@ -26,7 +26,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(thunk),
+    }).concat(thunk)
 })
 
 export const persistor = persistStore(store)

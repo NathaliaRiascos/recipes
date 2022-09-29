@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { Category, Recipe } from '@/models/recipe'
 
 export const getRecipes = createAsyncThunk('recipes/getRecibes', async (category: string, thunkApi) => {
   try {
@@ -14,7 +13,7 @@ export const getRecipes = createAsyncThunk('recipes/getRecibes', async (category
  
 })
 
-export const recipeById = createAsyncThunk('recipes/getRecipeById', async (id: string, thunkApi) => {
+export const recipeById = createAsyncThunk('recipes/getRecipeById', async (id: string | undefined, thunkApi) => {
 
   try {
     const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
