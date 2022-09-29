@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { Category, Recipe } from '@/models/recipe'
 
 export const getRecipes = createAsyncThunk('recipes/getRecibes', async (category: string, thunkApi) => {
   try {
