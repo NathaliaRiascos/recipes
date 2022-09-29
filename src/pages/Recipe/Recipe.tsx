@@ -48,6 +48,7 @@ function Recipe() {
       </div>
       {recipe?.strYoutube &&
         <iframe
+          name={`video's recipe ${recipe?.strMeal}`}
           className={styles.video}
           src={`https://www.youtube.com/embed/${getIdVideo()}`}>
         </iframe>}
