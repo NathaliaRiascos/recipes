@@ -16,7 +16,7 @@ function Card({ getRecipe, recipe }: Props) {
       </div>
       <div className={styles.content}>
         <h2>{recipe.strMeal}</h2>
-        <Link to={`recipe/${recipe.idMeal}`}>
+        <Link to={`${recipe.idMeal}`}>
           <Button>Ver más</Button>
         </Link>
       </div>

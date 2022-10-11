@@ -5,11 +5,11 @@ import { Home, Recipe } from '../pages'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/recipes',
     element: <Home />,
   },
   {
-    path: '/recipe/:recipeId',
+    path: '/recipes/:recipeId',
     element: <Recipe />,
   },
 ])

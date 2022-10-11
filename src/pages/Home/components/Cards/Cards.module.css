@@ -7,7 +7,8 @@
     /* max-width: 800px; */
     grid-template-rows: repeat(auto-fit, 200px);
     grid-auto-flow: column;
-    max-height: 400px;
+    max-height: 410px;
+    gap: 10px;
     /* overflow: hidden; */
   }
 }
