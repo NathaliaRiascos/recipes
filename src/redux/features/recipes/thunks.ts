@@ -13,7 +13,7 @@ export const getRecipes = createAsyncThunk('recipes/getRecibes', async (category
  
 })
 
-export const recipeById = createAsyncThunk('recipes/getRecipeById', async (id: string | undefined, thunkApi) => {
+export const recipeById = createAsyncThunk('recipes/getRecipeById', async (id: string, thunkApi) => {
 
   try {
     const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -42,11 +42,11 @@ export const recipeById = createAsyncThunk('recipes/getRecipeById', async (id: s
 
 export const searchRecipe = createAsyncThunk('recipes/searchRecibe', async (name: string, thunkApi) => {
   try {
-    const resp = await fetch(`www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+    const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     const data = await resp.json()
-    return data.results
+    return data.meals
   } catch (error) {
-    return thunkApi.rejectWithValue({ 
+    return thunkApi.rejectWithValue({
       message: 'Failed to fetch todos.'
     })
   }
