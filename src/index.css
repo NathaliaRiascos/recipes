@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Source+Sans+Pro:wght@300&display=swap');
+@import "tailwindcss";
 
 :root {
   --primary-color: #FFE05D;
