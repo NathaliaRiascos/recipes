@@ -1,4 +1,2 @@
-export * from './SearchBar'
-export * from './Card'
-export * from './Cards'
-export * from './Slider'
+export * from './SearchRecipe'
+export * from './CardRecipe'
